@@ -1,5 +1,3 @@
-var tableData = data;
-
 var t_body = d3.select("tbody");
 // get matching sightings records for the specified date/times
 var getMatchingRecords = dt => {
@@ -25,7 +23,7 @@ var table_update = records => {
         });
     });
 }
-
+// make the filter button
 var button = d3.select("#filter-btn");
 // get matching records for the input and update the table
 var handle_input = () => {
@@ -36,7 +34,7 @@ var handle_input = () => {
     var records = getMatchingRecords(dt);
     table_update(records);
 }
-
+// handle inputs when button is clicked or form is submitted(date entered)
 button.on("click", handle_input);
 d3.select("form").on("submit", handle_input);
 
